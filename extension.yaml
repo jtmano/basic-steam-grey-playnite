@@ -7,7 +7,7 @@ Links:
   - Name: GitHub
     Url: https://github.com/jtmano/basic-steam-grey-playnite
 Screenshots:
-  - https://raw.githubusercontent.com/jtmano/basic-steam-grey-playnite/main/screenshots/main.png
+  - https://raw.githubusercontent.com/jtmano/basic-steam-grey-playnite/main/BasicSteamGrey.png
 Tags:
   - Steam Deck
   - SteamOS
@@ -22,3 +22,4 @@ Changelog:
       - SteamOS-inspired layout with centered category tabs
       - Neutral grey color scheme with Steam inspired blue accents
       - Xbox controller button hints (LB/RB, A/B)
+
