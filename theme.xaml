@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- Theme.xaml is loaded by Playnite after constants
+         Add any additional style overrides here -->
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="constants.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

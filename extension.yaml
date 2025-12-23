@@ -1,0 +1,24 @@
+AddonId: BasicSteamGrey_79c3d2ad-c32c-479c-841e-a0888dc84e83
+Type: ThemeFullscreen
+Name: Basic Steam Grey
+Author: jtmano
+Version: 1.0.0
+Links:
+  - Name: GitHub
+    Url: https://github.com/jtmano/basic-steam-grey-playnite
+Screenshots:
+  - https://raw.githubusercontent.com/jtmano/basic-steam-grey-playnite/main/screenshots/main.png
+Tags:
+  - Steam Deck
+  - SteamOS
+  - Dark
+  - Controller
+Description: >
+  A Playnite Fullscreen theme inspired by SteamOS interface.
+Changelog:
+  - Version: 1.0.0
+    Changes:
+      - Initial release
+      - SteamOS-inspired layout with centered category tabs
+      - Neutral grey color scheme with Steam inspired blue accents
+      - Xbox controller button hints (LB/RB, A/B)

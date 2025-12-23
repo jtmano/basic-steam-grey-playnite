@@ -1,0 +1,95 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Steam Deck Style - Category Tab Items -->
+    <Style x:Key="ItemFilterQuickPreset" TargetType="CheckBoxEx">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBoxEx">
+                    <Border x:Name="TabBorder" 
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="12"
+                            Margin="12,0,12,0"
+                            Padding="20,12,20,12">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <!-- Category Name -->
+                                <TextBlock x:Name="TabText"
+                                           Text="{Binding Name}" 
+                                           FontFamily="{DynamicResource FontMotivaSansMedium}"
+                                           FontSize="22"
+                                           Foreground="{TemplateBinding Foreground}"/>
+                                <!-- Count badge (if available) -->
+                                <TextBlock x:Name="CountBadge"
+                                           Text="{Binding Games.Count, FallbackValue=''}"
+                                           FontSize="17"
+                                           Foreground="{DynamicResource TextBrushDark}"
+                                           Margin="10,0,0,0"
+                                           VerticalAlignment="Center"/>
+                            </StackPanel>
+                            
+                            <!-- Underline indicator -->
+                            <Border x:Name="Underline" 
+                                    Height="3" 
+                                    CornerRadius="1.5"
+                                    Margin="0,6,0,0"
+                                    Background="{DynamicResource GlyphBrush}"
+                                    Visibility="Collapsed"/>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
+                            <Setter TargetName="Underline" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="Underline" Property="Opacity" Value="0.6" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="TabText" Property="FontWeight" Value="Bold" />
+                            <Setter TargetName="TabText" Property="Foreground" Value="{DynamicResource TextBrush}" />
+                            <Setter TargetName="Underline" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="Underline" Property="Opacity" Value="1" />
+                            <!-- Pill background for selected tab -->
+                            <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Steam Deck Style - Filter Preset Selector Container -->
+    <Style TargetType="{x:Type FilterPresetSelector}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type FilterPresetSelector}">
+                    <ItemsControlEx x:Name="PART_ItemsFilterPresets" 
+                                    Focusable="False"
+                                    KeyboardNavigation.DirectionalNavigation="Once"
+                                    HorizontalLayout="True">
+                        <ItemsControl.ItemsPanel>                            
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.Template>
+                            <ControlTemplate>
+                                <ScrollViewer Focusable="False"
+                                              HorizontalScrollBarVisibility="Hidden"
+                                              VerticalScrollBarVisibility="Disabled"
+                                              CanContentScroll="True">
+                                    <ItemsPresenter />
+                                </ScrollViewer>
+                            </ControlTemplate>
+                        </ItemsControl.Template>
+                    </ItemsControlEx>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
